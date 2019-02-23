@@ -1,0 +1,35 @@
+  int timeRun=0;
+    public Attendance() {
+        initComponents();
+        new Thread(){
+            public void run(){
+            while(timeRun ==0){
+                Calendar cal=new GregorianCalendar();
+            int hour=cal.get(Calendar.HOUR);
+              int min=cal.get(Calendar.MINUTE);
+                int sec=cal.get(Calendar.SECOND);
+                  int am_pm=cal.get(Calendar.AM_PM);
+                  String d_n="";
+                  if(am_pm==1){
+                  d_n="PM";				//alienwarearea(q)51
+                  
+                  }
+                  
+                  
+                  else{
+                  d_n="AM";
+                  }
+                  
+                  
+                  String time=hour+":"+min+":"+sec+" "+d_n;
+                  clock.setText(time);
+            
+            
+            
+            
+            
+            }
+            
+            
+            }
+    }.start();}
